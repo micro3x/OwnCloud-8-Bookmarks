@@ -1,0 +1,136 @@
+#container {
+    width: 600px;
+}
+
+#tags ul li {
+    display: none;
+}
+
+#tags li.selected ul li {
+    display: block;
+}
+
+#tags {
+    list-style: none;
+    padding: 0;
+    ul {
+        list-style: none;
+        li {
+            background: white;
+            a {
+                color: black;
+            }
+            &:nth-of-type(2n) {
+                background-color: lightgray;
+            }
+            cursor: auto;
+
+            .deleteBookmark{
+                padding: 2px;
+                border: 1px solid rgba(255,0,0,0.2);
+                background: rgba(255,0,0,0.1);
+                border-radius: 4px;
+                font-size: 0.8em;
+                color: gray;
+            }
+        }
+    }
+
+    li {
+        margin: 3px;
+        background: lightgray;
+        padding: 3px;
+        cursor: pointer;
+    }
+}
+
+#info {
+    display: block;
+    text-align: center;
+}
+
+.settings-wrapper {
+    text-align: center;
+    .controls {
+        display: inline-block;
+        text-align: right;
+    }
+}
+
+.button {
+    padding: 5px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search {
+    padding: 5px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: auto;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+}
+
+#addControls {
+    display: none;
+
+    #addBookmark-form {
+        .stretch {
+            input {
+                width: 100%;
+                padding: 5px;
+                border: 1px solid gray;
+                border-radius: 5px;
+            }
+            margin: 15px 10px;
+
+        }
+
+        .col {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 10px;
+            width: 45%;
+
+            input, textarea {
+                width: 90%;
+                margin-bottom: 10px;
+                padding: 5px;
+                border: 1px solid gray;
+                border-radius: 5px;
+            }
+        }
+
+        label {
+            display: block;
+            vertical-align: top;
+        }
+
+        .form-actions {
+            input[type=reset] {
+                .button;
+                border: 1px solid red;
+                &:hover {
+                    background-color: rgba(255, 0, 0, 0.1);
+                }
+
+            }
+
+            input[type=submit] {
+                .button;
+                border: 1px solid green;
+                &:hover {
+                    background-color: rgba(0, 255, 0, 0.1);
+                }
+            }
+        }
+    }
+}

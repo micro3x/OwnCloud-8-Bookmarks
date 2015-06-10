@@ -1,0 +1,124 @@
+#container {
+  width: 600px;
+}
+#tags ul li {
+  display: none;
+}
+#tags li.selected ul li {
+  display: block;
+}
+#tags {
+  list-style: none;
+  padding: 0;
+}
+#tags ul {
+  list-style: none;
+}
+#tags ul li {
+  background: white;
+  cursor: auto;
+}
+#tags ul li a {
+  color: black;
+}
+#tags ul li:nth-of-type(2n) {
+  background-color: lightgray;
+}
+#tags ul li .deleteBookmark {
+  padding: 2px;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 0.8em;
+  color: gray;
+}
+#tags li {
+  margin: 3px;
+  background: lightgray;
+  padding: 3px;
+  cursor: pointer;
+}
+#info {
+  display: block;
+  text-align: center;
+}
+.settings-wrapper {
+  text-align: center;
+}
+.settings-wrapper .controls {
+  display: inline-block;
+  text-align: right;
+}
+.button {
+  padding: 5px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search {
+  padding: 5px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: auto;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+#addControls {
+  display: none;
+}
+#addControls #addBookmark-form .stretch {
+  margin: 15px 10px;
+}
+#addControls #addBookmark-form .stretch input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#addControls #addBookmark-form .col {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  width: 45%;
+}
+#addControls #addBookmark-form .col input,
+#addControls #addBookmark-form .col textarea {
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#addControls #addBookmark-form label {
+  display: block;
+  vertical-align: top;
+}
+#addControls #addBookmark-form .form-actions input[type=reset] {
+  padding: 5px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid red;
+}
+#addControls #addBookmark-form .form-actions input[type=reset]:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+#addControls #addBookmark-form .form-actions input[type=submit] {
+  padding: 5px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid green;
+}
+#addControls #addBookmark-form .form-actions input[type=submit]:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+}

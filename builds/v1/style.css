@@ -1,0 +1,41 @@
+#container {
+  width: 600px;
+}
+#tags ul li {
+  display: none;
+}
+#tags li.selected ul li {
+  display: block;
+}
+#tags {
+  list-style: none;
+  padding: 0;
+}
+#tags ul {
+  list-style: none;
+}
+#tags ul li {
+  background: white;
+}
+#tags ul li a {
+  color: black;
+}
+#tags ul li:nth-of-type(2n) {
+  background-color: lightgray;
+}
+#tags li {
+  margin: 3px;
+  background: lightgray;
+  padding: 3px;
+}
+#info {
+  display: block;
+  text-align: center;
+}
+.settings-wrapper {
+  text-align: center;
+}
+.settings-wrapper .controls {
+  display: inline-block;
+  text-align: right;
+}
