@@ -122,3 +122,16 @@
 #addControls #addBookmark-form .form-actions input[type=submit]:hover {
   background-color: rgba(0, 255, 0, 0.1);
 }
+.confbox {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 20px;
+  visibility: hidden;
+  width: 300px;
+  z-index: 999;
+  position: fixed;
+  display: block;
+  top: 30%;
+  left: 30%;
+}

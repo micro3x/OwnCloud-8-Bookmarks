@@ -10,8 +10,38 @@ $('document').ready(function () {
 
     app.dataAccess.getDataFromStorage();
     app.ui.displayBookmarks(app.data.localData);
-    $('#tags').on('click', 'li', function (item) {
-        app.ui.selectItem(item.target);
+    $('#tags').on('click', 'li.tagContainer', function (item) {
+        var target = $(item.target);
+        if (target.hasClass('deleteBookmark')) {
+            //todo confirm delete
+            var id = target.parent().attr('data-id');
+            var title = target.parent().find('a').text();
+            app.ui.showDeleteConfirmation(id, title);
+        } else {
+            app.ui.selectItem(target);
+        }
+    });
+
+    $('#confirm-delete').on('click', function (ev) {
+        var target = $(ev.target);
+        var id = target.parent().attr('data-id');
+
+        app.dataAccess.deleteBookmark(id).then(
+            function (success) {
+                app.ui.success('bookmark deleted.')
+            },
+            function (error) {
+                app.ui.error('can\'t delete from server')
+            }
+        );
+
+        // todo remove from DOM
+        app.ui.removeBookmarkFromDOM(id);
+        app.ui.hideDeleteConfirmation();
+    });
+
+    $('#cancel-delete').on('click', function (ev) {
+        app.ui.hideDeleteConfirmation();
     });
 
     $('#addBookmark-form').on('submit', function (event) {
@@ -35,7 +65,7 @@ $('document').ready(function () {
 
     $('#search').on('keyup', function (ev) {
         var searchText = $('#search').val().toLowerCase();
-        if(!searchText){
+        if (!searchText) {
             app.ui.displayBookmarks(app.data.localData);
         } else {
             var filteredData = app.dataAccess.filterLocalData(searchText);
@@ -48,16 +78,12 @@ $('document').ready(function () {
     });
 
     $('#addNew').on('click', function () {
-        chrome.tabs.getSelected(null,function(tab) {
+        chrome.tabs.getSelected(null, function (tab) {
             $('#addBookmark-url').val(tab.url);
             $('#addBookmark-title').val(tab.title);
         });
         $('#addControls').toggle();
     });
-
-
-    //todo handle delete event
-
 
     chrome.storage.sync.get({
         baseUrl: "",
@@ -76,4 +102,5 @@ $('document').ready(function () {
                 app.dataAccess.getDataFromServer();
             })
     });
+
 });

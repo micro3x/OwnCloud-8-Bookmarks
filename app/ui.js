@@ -23,13 +23,20 @@ app.ui = app.ui || {};
 
         for (var tagIndex in tags) {
             var tag = tags[tagIndex];
-            var element = $('<li>').text(tag + '(' + data[tag].length + ')');
+            var element = $('<li>').text(tag + '(' + data[tag].length + ')').addClass('tagContainer');
             container.append(element);
             var bookmarksList = $('<ul>');
             for (var objIndex in data[tag]) {
                 var linkObj = data[tag][objIndex];
                 var bookmarkRow = $('<li>').attr('data-id', linkObj.id).html(createBookmark(linkObj));
-                bookmarkRow.append($('<span>').text('X').css({float: 'right', cursor: 'pointer'}).addClass('deleteBookmark'));
+                bookmarkRow.append(
+                    $('<span>')
+                        .text('X')
+                        .css({float: 'right', cursor: 'pointer'})
+                        .addClass('deleteBookmark')
+                        .addClass('left')
+                        .addClass('zzConfirm_active'));
+
                 bookmarksList.append(bookmarkRow);
             }
             element.append(bookmarksList);
@@ -65,11 +72,33 @@ app.ui = app.ui || {};
         $('#addControls').hide();
     }
 
+    function showDeleteConfirmation(id, title) {
+        var box = $('#confbox');
+        box.attr('data-id', id);
+        box.find('p').text(title);
+        box.css({visibility: 'visible'});
+    }
+
+    function hideDeleteConfirmation() {
+        var box = $('#confbox');
+        box.find('p').text('');
+        box.attr('data-id', '');
+        box.css({visibility: 'hidden'});
+    }
+
+    function removeBookmarkFromDOM(id) {
+        var lis = $('#tags li[data-id=' + id + ']');
+        console.log(lis);
+    }
+
     scope.ui.error = displayError;
     scope.ui.success = displayInfo;
     scope.ui.displayBookmarks = displayBookmarks;
     scope.ui.selectItem = selectItem;
     scope.ui.displayAddControls = displayAddControls;
     scope.ui.hideAddControls = hideAddControls;
+    scope.ui.showDeleteConfirmation = showDeleteConfirmation;
+    scope.ui.hideDeleteConfirmation = hideDeleteConfirmation;
+    scope.ui.removeBookmarkFromDOM = removeBookmarkFromDOM;
 
 })(app);
