@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/q.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/security.js"></script>
+    <script src="app/dataAccess.js"></script>
+    <script src="app/ui.js"></script>
+    <button class="button" id="addNew">Add to ownCloud</button>
+    <span id="infoBox">Loading</span>
+    <input id="search" class="search" placeholder="Filter..." type="text"/>
+    <div id="addControls">
+        <form action="" id="addBookmark-form">
+            <div class="stretch">
+                <label for="addBookmark-title">Title</label>
+                <input type="text" id="addBookmark-title"/>
+            </div>
+            <div class="col">
+                <div>
+                    <label for="addBookmark-url">Url</label>
+                    <input type="text" id="addBookmark-url"/>
+                </div>
+                <div>
+                    <label for="addBookmark-description">Description</label>
+                    <input type="text" id="addBookmark-description"/>
+                </div>
+            </div>
+            <div class="col">
+                <label for="addBookmarkTags">Tags separated by comma <b>( , )</b></label>
+                <textarea name="tags" id="addBookmarkTags" cols="30" rows="5"></textarea>
+            </div>
+            <div class="form-actions">
+                <input class="button" type="submit" value="Save"/>
+                <input class="button" type="reset" value="Cancel"/>
+            </div>
+        </form>
+    </div>
+    <div id="container">
+        <ul id="tags">
+        </ul>
+    </div>
+    <div class="confbox" id="confbox">
+        <h3>Are you sure you want to delete:</h3>
+        <p></p>
+        <button class="button" id="confirm-delete">Yes</button>
+        <button class="button" id="cancel-delete">No</button>
+    </div>
+</body>
+</html>

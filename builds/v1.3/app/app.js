@@ -13,6 +13,7 @@ $('document').ready(function () {
     $('#tags').on('click', 'li.tagContainer', function (item) {
         var target = $(item.target);
         if (target.hasClass('deleteBookmark')) {
+            //todo confirm delete
             var id = target.parent().attr('data-id');
             var title = target.parent().find('a').text();
             app.ui.showDeleteConfirmation(id, title);
