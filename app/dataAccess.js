@@ -121,7 +121,7 @@ app.data.localData = app.data.localData || [];
         }
 
         $.ajax({
-            url: scope.constants.baseURL + scope.constants.path + '/bookmark',
+            url: scope.constants.baseURL + scope.constants.path + 'bookmark',
             headers: {
                 requesttoken: app.constants.accessToken
             },
