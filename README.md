@@ -5,10 +5,14 @@ With this extention you can access and use your Owncloud bookmarks in just a cli
 
 On first connect all bookmarks are downloaded localy and you can access them even if you do not have connection to your cloud. And are automaticaly updated every time you access the extention if you have connection.
 
-version 1.3 - comming soon
-New Features:
- - delete bookmarks
+version 1.4 - comming soon
+New Features
  - style custamization
+
+version 1.3
+New Features:
+ - Bug fixes
+ - delete bookmarks
  - filtering improvements
 
 version 1.2
