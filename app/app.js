@@ -28,14 +28,15 @@ $('document').ready(function () {
 
         app.dataAccess.deleteBookmark(id).then(
             function (success) {
-                app.ui.success('bookmark deleted.')
+                app.ui.success('bookmark deleted.');
+                app.data.serverData = [];
+                app.dataAccess.getDataFromServer();
             },
             function (error) {
                 app.ui.error('can\'t delete from server')
             }
         );
 
-        // todo remove from DOM
         app.ui.removeBookmarkFromDOM(id);
         app.ui.hideDeleteConfirmation();
     });

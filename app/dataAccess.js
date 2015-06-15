@@ -114,7 +114,7 @@ app.data.localData = app.data.localData || [];
         var fd = new FormData();
 
         fd.append('url', url);
-        fd.append('tittle', title);
+        fd.append('title', title);
         fd.append('description', description);
         for(var tagIndex in tags){
             fd.append('item[tags][]',tags[tagIndex]);
@@ -171,9 +171,9 @@ app.data.localData = app.data.localData || [];
     function deleteBookmark(id){
         var deffered = Q.defer();
         $.ajax(
-            app.constants.baseURL + app.constants.path + id,
+            app.constants.baseURL + app.constants.path + 'bookmark/' + id,
             {
-                metthod: "DELETE",
+                method: "DELETE",
                 headers: {
                     requesttoken: app.constants.accessToken
                 }

@@ -88,7 +88,7 @@ app.ui = app.ui || {};
 
     function removeBookmarkFromDOM(id) {
         var lis = $('#tags li[data-id=' + id + ']');
-        console.log(lis);
+        lis.remove();
     }
 
     scope.ui.error = displayError;
