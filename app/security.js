@@ -14,7 +14,7 @@ app.security = app.security || {};
             type: 'GET'
         }).success(function (data) {
             var rt = data.match(/data-requesttoken="(.*)"/);
-            if(!rt || rt.length < 2){
+            if (!rt || rt.length < 2) {
                 app.ui.error('missing request token.');
                 return;
             }
@@ -32,12 +32,12 @@ app.security = app.security || {};
                     scope.constants.accessToken = data.match(/data-requesttoken="(.*)"/)[1];
                     deffered.resolve();
                 },
-                error: function (error) {
+                error: function () {
                     app.ui.error('can\'t login');
                     deffered.reject();
                 }
             });
-        }).error(function (error) {
+        }).error(function () {
             app.ui.error('cannot connect to server');
         });
         return deffered.promise;

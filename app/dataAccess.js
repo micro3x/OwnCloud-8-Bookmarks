@@ -73,7 +73,7 @@ app.data.localData = app.data.localData || [];
                 deffered.resolve(data);
             }).error(function (error) {
                 deffered.reject(error);
-            })
+            });
         return deffered.promise;
     }
 
@@ -85,8 +85,8 @@ app.data.localData = app.data.localData || [];
 
     function buildDataModel(data) {
         var dataTags = {untaged: []};
-        for (var linkindex in data) {
-            var objLink = data[linkindex];
+        for (var linkIndex in data) {
+            var objLink = data[linkIndex];
             for (var tagIndex in objLink['tags']) {
                 var tag = objLink['tags'][tagIndex];
                 if (tag) {

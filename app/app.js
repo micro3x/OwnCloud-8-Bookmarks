@@ -6,7 +6,7 @@ $('document').ready(function () {
     app.constants.path = '/index.php/apps/bookmarks/';
     app.constants.user = '';
     app.constants.pass = '';
-
+    
     app.dataAccess.getDataFromStorage();
     app.ui.displayBookmarks(app.data.localData);
     $('#tags').on('click', 'li.tagContainer', function (item) {
@@ -25,12 +25,12 @@ $('document').ready(function () {
         var id = target.parent().attr('data-id');
 
         app.dataAccess.deleteBookmark(id).then(
-            function (success) {
+            function () {
                 app.ui.success('bookmark deleted.');
                 app.data.serverData = [];
                 app.dataAccess.getDataFromServer();
             },
-            function (error) {
+            function () {
                 app.ui.error('can\'t delete from server')
             }
         );
@@ -39,7 +39,7 @@ $('document').ready(function () {
         app.ui.hideDeleteConfirmation();
     });
 
-    $('#cancel-delete').on('click', function (ev) {
+    $('#cancel-delete').on('click', function () {
         app.ui.hideDeleteConfirmation();
     });
 
@@ -52,7 +52,7 @@ $('document').ready(function () {
             return element.trim();
         });
         app.dataAccess.addBookmarkToCloud(bookmarkUrl, bookmarkTitle, bookmarkDesc, bookmarkTags)
-            .then(function (data) {
+            .then(function () {
                 app.ui.success('bookmark added');
                 app.ui.hideAddControls();
                 app.data.serverData = [];
@@ -62,7 +62,7 @@ $('document').ready(function () {
             });
     });
 
-    $('#search').on('keyup', function (ev) {
+    $('#search').on('keyup', function () {
         var searchText = $('#search').val().toLowerCase();
         if (!searchText) {
             app.ui.displayBookmarks(app.data.localData);
@@ -72,7 +72,7 @@ $('document').ready(function () {
         }
     });
 
-    $('#addBookmark-form input[type=reset]').on('click', function (event) {
+    $('#addBookmark-form input[type=reset]').on('click', function () {
         app.ui.hideAddControls();
     });
 

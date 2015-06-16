@@ -1,6 +1,6 @@
 var customStyle = {};
 
-$('#server-save').on('click', function (ev) {
+$('#server-save').on('click', function () {
     var baseURL = $('#baseUrl').val();
     var username = $('#username').val();
     var password = $('#password').val();
