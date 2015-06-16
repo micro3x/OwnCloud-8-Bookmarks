@@ -91,6 +91,19 @@ app.ui = app.ui || {};
         lis.remove();
     }
 
+    function loadCustomStyle() {
+        var style = app.constants.style;
+        var styleElement = $('#custom-style');
+        var cssText = '';
+        cssText += 'body{background-color: ' + style.bkgColor + ';}\n';
+        cssText += 'body, .button, input[type=text], #tags ul li a{color: ' + style.textColor + ';}\n';
+        cssText += '#tags > li {background-color: ' + style.tagColor + ';}\n';
+        cssText += '#tags > li ul li:nth-of-type(n) {background-color: ' + style.eleColor1 + ';}\n';
+        cssText += '#tags > li ul li:nth-of-type(2n) {background-color: ' + style.eleColor2 + ';}\n';
+        styleElement.html(cssText);
+    }
+
+
     scope.ui.error = displayError;
     scope.ui.success = displayInfo;
     scope.ui.displayBookmarks = displayBookmarks;
@@ -100,5 +113,7 @@ app.ui = app.ui || {};
     scope.ui.showDeleteConfirmation = showDeleteConfirmation;
     scope.ui.hideDeleteConfirmation = hideDeleteConfirmation;
     scope.ui.removeBookmarkFromDOM = removeBookmarkFromDOM;
+    scope.ui.loadCustomStyle = loadCustomStyle;
+
 
 })(app);

@@ -52,7 +52,6 @@
 .button {
   padding: 5px;
   background-color: transparent;
-  color: black;
   border: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;
@@ -101,7 +100,6 @@
 #addControls #addBookmark-form .form-actions input[type=reset] {
   padding: 5px;
   background-color: transparent;
-  color: black;
   border: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;
@@ -113,7 +111,6 @@
 #addControls #addBookmark-form .form-actions input[type=submit] {
   padding: 5px;
   background-color: transparent;
-  color: black;
   border: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;

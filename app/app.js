@@ -2,7 +2,6 @@ var app = app || {};
 app.constants = app.constants || {};
 
 $('document').ready(function () {
-
     app.constants.baseURL = '';
     app.constants.path = '/index.php/apps/bookmarks/';
     app.constants.user = '';
@@ -88,11 +87,20 @@ $('document').ready(function () {
     chrome.storage.sync.get({
         baseUrl: "",
         username: "",
-        password: ""
+        password: "",
+        style: {
+            bkgColor: '#FFFFFF',
+            tagColor: '#d3d3d3',
+            textColor: '#000000',
+            eleColor2: '#d3d3d3',
+            eleColor1: '#FFFFFF'
+        }
     }, function (items) {
         app.constants.baseURL = items.baseUrl;
         app.constants.user = items.username;
         app.constants.pass = items.password;
+        app.constants.style = items.style;
+        app.ui.loadCustomStyle();
         app.security.login(app.constants.user, items.password)
             .then(
             function () {

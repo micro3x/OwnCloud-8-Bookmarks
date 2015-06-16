@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Ownclod 8 bookmarks</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="settings.css"/>
+    <style id="custom-style-preview">
+
+    </style>
 </head>
 <body>
     <script src="lib/jquery-2.1.4.min.js"></script>
@@ -23,13 +27,67 @@
                 <input type="text" id="username"/>
             </div>
             <div>
-                <label for="pass">password:</label>
+                <label for="password">password:</label>
                 <input type="password" id="password"/>
             </div>
             <div id="status"></div>
-            <button id="save">Save</button>
+            <button id="server-save" class="button">Save</button>
         </div>
-    </div>
-    <script src="settings.js"></script>
+        <div class="style">
+            <div class="preview">
+                <div class="style-preview-body">
+                    <div id="container">
+                        <ul id="tags">
+                            <li class="tagContainer selected">Tag Title(1)
+                                <ul>
+                                    <li>
+                                        <a href="#" title="">Bookmark Title</a>
+                                        <span class="deleteBookmark" style="float: right;">X</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">Bookmark Title</a>
+                                        <span class="deleteBookmark" style="float: right;">X</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">Bookmark Title</a>
+                                        <span class="deleteBookmark" style="float: right;">X</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <form id="custom-style-controls">
+                    <div class="style-controls">
+                        <div class="input-control">
+                            <label for="style-background">Background Color</label>
+                            <input type="color" id="style-background"/>
+                        </div>
+                        <div class="input-control">
+                            <label for="style-text">Text Color</label>
+                            <input type="color" id="style-text"/>
+                        </div>
+                        <div class="input-control">
+                            <label for="style-tag">Tag Color</label>
+                            <input type="color" id="style-tag"/>
+                        </div>
+                        <div class="input-control">
+                            <label for="style-book1">Element Color 1</label>
+                            <input type="color" id="style-book1"/>
+                        </div>
+                        <div class="input-control">
+                            <label for="style-book2">Element Color 2</label>
+                            <input type="color" id="style-book2"/>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" value="Save Style" class="button"/>
+                        <input type="button" id="reset-style" value="Reset Style" class="button"/>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <script src="settings.js"></script>
 </body>
 </html>

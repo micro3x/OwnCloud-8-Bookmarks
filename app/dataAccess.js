@@ -103,10 +103,10 @@ app.data.localData = app.data.localData || [];
     }
 
     function addBookmarkToCloud(url, title, description, tags) {
-        if(!url){
+        if (!url) {
             app.ui.error('missing URL');
         }
-        if(!title){
+        if (!title) {
             app.ui.error('missing title');
         }
         var deffered = Q.defer();
@@ -116,8 +116,8 @@ app.data.localData = app.data.localData || [];
         fd.append('url', url);
         fd.append('title', title);
         fd.append('description', description);
-        for(var tagIndex in tags){
-            fd.append('item[tags][]',tags[tagIndex]);
+        for (var tagIndex in tags) {
+            fd.append('item[tags][]', tags[tagIndex]);
         }
 
         $.ajax({
@@ -143,23 +143,23 @@ app.data.localData = app.data.localData || [];
 
     }
 
-    function filterLocalData(searchString){
+    function filterLocalData(searchString) {
         var regex = new RegExp('.*' + searchString.toLowerCase() + '.*', 'g');
         var outputData = {};
 
-        for(var tag in scope.data.localData){
+        for (var tag in scope.data.localData) {
             var bookmarks = scope.data.localData[tag];
 
             var matchingValues = [];
 
-            for(var bMarkIndex in bookmarks){
+            for (var bMarkIndex in bookmarks) {
                 var bookmark = bookmarks[bMarkIndex];
-                if(bookmark['title'].toLowerCase().match(regex)){
+                if (bookmark['title'].toLowerCase().match(regex)) {
                     matchingValues.push(bookmark);
                 }
             }
 
-            if(matchingValues.length > 0){
+            if (matchingValues.length > 0) {
                 outputData[tag] = matchingValues;
             }
 
@@ -168,7 +168,7 @@ app.data.localData = app.data.localData || [];
         return outputData;
     }
 
-    function deleteBookmark(id){
+    function deleteBookmark(id) {
         var deffered = Q.defer();
         $.ajax(
             app.constants.baseURL + app.constants.path + 'bookmark/' + id,

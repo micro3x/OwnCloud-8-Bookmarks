@@ -1,4 +1,4 @@
-$('#save').on('click', function (ev) {
+$('#server-save').on('click', function (ev) {
     var baseURL = $('#baseUrl').val();
     var username = $('#username').val();
     var password = $('#password').val();
