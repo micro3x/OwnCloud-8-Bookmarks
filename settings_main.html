@@ -15,6 +15,7 @@
         <div class="logo">
             <img src="big_icon.png" alt="logo"/>
             <h3>OwnCloud 8 bookmarks</h3>
+            <h4 id="status"></h4>
         </div>
         <div class="controls">
             <div>
@@ -29,8 +30,8 @@
                 <label for="password">password:</label>
                 <input type="password" id="password"/>
             </div>
-            <div id="status"></div>
-            <button id="server-save" class="button">Save</button>
+
+            <button id="server-save" class="button save">Save</button>
         </div>
         <div class="style">
             <div class="preview">
@@ -80,8 +81,8 @@
                         </div>
                     </div>
                     <div>
-                        <input type="submit" value="Save Style" class="button"/>
-                        <input type="button" id="reset-style" value="Reset Style" class="button"/>
+                        <input type="submit" value="Save Style" class="button save"/>
+                        <input type="button" id="reset-style" value="Reset Style" class="button reset"/>
                     </div>
                 </form>
             </div>

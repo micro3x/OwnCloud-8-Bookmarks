@@ -97,28 +97,6 @@
   display: block;
   vertical-align: top;
 }
-#addControls #addBookmark-form .form-actions input[type=reset] {
-  padding: 5px;
-  background-color: transparent;
-  border: 1px solid gray;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 1px solid red;
-}
-#addControls #addBookmark-form .form-actions input[type=reset]:hover {
-  background-color: rgba(255, 0, 0, 0.1);
-}
-#addControls #addBookmark-form .form-actions input[type=submit] {
-  padding: 5px;
-  background-color: transparent;
-  border: 1px solid gray;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 1px solid green;
-}
-#addControls #addBookmark-form .form-actions input[type=submit]:hover {
-  background-color: rgba(0, 255, 0, 0.1);
-}
 .confbox {
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid white;
@@ -131,4 +109,16 @@
   display: block;
   top: 30%;
   left: 30%;
+}
+.save {
+  border: 1px solid green;
+}
+.save:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+.reset {
+  border: 1px solid red;
+}
+.reset:hover {
+  background-color: rgba(255, 0, 0, 0.1);
 }

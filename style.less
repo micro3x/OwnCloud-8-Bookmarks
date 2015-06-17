@@ -90,7 +90,6 @@
                 border-radius: 5px;
             }
             margin: 15px 10px;
-
         }
 
         .col {
@@ -112,25 +111,6 @@
             display: block;
             vertical-align: top;
         }
-
-        .form-actions {
-            input[type=reset] {
-                .button;
-                border: 1px solid red;
-                &:hover {
-                    background-color: rgba(255, 0, 0, 0.1);
-                }
-
-            }
-
-            input[type=submit] {
-                .button;
-                border: 1px solid green;
-                &:hover {
-                    background-color: rgba(0, 255, 0, 0.1);
-                }
-            }
-        }
     }
 }
 
@@ -146,4 +126,17 @@
     display: block;
     top: 30%;
     left: 30%;
+}
+
+.save {
+    border: 1px solid green;
+    &:hover {
+        background-color: rgba(0, 255, 0, 0.1);
+    }
+}
+.reset {
+    border: 1px solid red;
+    &:hover {
+        background-color: rgba(255, 0, 0, 0.1);
+    }
 }

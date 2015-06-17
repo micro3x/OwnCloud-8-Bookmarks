@@ -15,3 +15,17 @@
 #custom-style-controls .input-control label {
   display: block;
 }
+.controls {
+  margin: 15px 10px;
+}
+.controls input {
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 5px;
+}
+#status {
+  height: 1em;
+  font-weight: bold;
+  display: inline-block;
+}
