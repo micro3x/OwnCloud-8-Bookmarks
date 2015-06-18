@@ -53,15 +53,9 @@ app.ui = app.ui || {};
         return link;
     }
 
-    function clearSelectedTag() {
-        var list = $('#tags');
-        var item = list.find('.selected');
-        item.removeClass('selected');
-    }
-
     function selectItem(item) {
-        clearSelectedTag();
-        $(item).addClass('selected');
+        $(item).siblings().removeClass('selected');
+        $(item).toggleClass('selected');
     }
 
     function displayAddControls() {
