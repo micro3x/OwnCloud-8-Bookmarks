@@ -84,7 +84,7 @@ app.data.localData = app.data.localData || [];
     }
 
     function buildDataModel(data) {
-        var dataTags = {untaged: []};
+        var dataTags = {untagged: []};
         for (var linkIndex in data) {
             var objLink = data[linkIndex];
             for (var tagIndex in objLink['tags']) {
@@ -95,7 +95,7 @@ app.data.localData = app.data.localData || [];
                     }
                     dataTags[tag].push(objLink);
                 } else {
-                    dataTags['untaged'].push(objLink);
+                    dataTags['untagged'].push(objLink);
                 }
             }
         }
