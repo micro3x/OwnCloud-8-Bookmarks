@@ -26,12 +26,16 @@
     "https://ajax.googleapis.com/",
     "<all_urls>"
   ],
-  "background":{
-      "persistent": true,
-      "scripts":[
-          "lib/jquery-2.1.4.min.js",
-          "app/background.js"
-      ]
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "lib/jquery-2.1.4.min.js",
+      "lib/q.js",
+      "app/ui.js",
+      "app/security.js",
+      "app/dataAccess.js",
+      "app/background.js"
+    ]
   },
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
 }

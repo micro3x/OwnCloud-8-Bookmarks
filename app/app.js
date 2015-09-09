@@ -84,6 +84,8 @@ $('document').ready(function () {
         $('#addControls').toggle();
     });
 
+    //todo: Refactor this I don't like it!
+    //maybe put all options in an object and extract this to a function!?!..
     chrome.storage.sync.get({
         baseUrl: "",
         username: "",
