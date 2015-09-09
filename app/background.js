@@ -36,24 +36,42 @@ app.constants = app.constants || {};
 })(app);
 
 
+function addFromBackground(){
+    var app = app || {};
+    alert('test');
+}
+
+
 chrome.contextMenus.create({
     id: 'oc-top',
     type: "normal",
     title: "bookmark to cloud",
     onclick: function (info, tab) {
-        var bookmarkUrl = tab.url,
-            bookmarkTitle = tab.title,
-            bookmarkDesc = prompt("Description", "") || "",
-            bookmarkTags = prompt("Tags separated by comma (,)", "").split(',').map(function (element) {
-                    return element.trim();
-                }) || [];
-        app.dataAccess.addBookmarkToCloud(bookmarkUrl, bookmarkTitle, bookmarkDesc, bookmarkTags)
-            .then(function () {
-                alert("Added");
-            }, function (error) {
-                console.log(error);
-            });
+
+        chrome.tabs.executeScript(tab.id, {file: "lib/jquery-2.1.4.min.js"});
+        chrome.tabs.executeScript(tab.id, {file: "app/context.js"});
+        chrome.tabs.insertCSS(tab.id, {file: "oc-modal.css"});
+
+
     }
 }, function () {
+    chrome.runtime.onMessage.addListener(
+        function (request, sender, sendResponse) {
+            console.log(request);
+            console.log(sender);
+            console.log(sendResponse);
 
+            var bookmarkUrl = sender.tab.url,
+                bookmarkTitle = sender.tab.title,
+                bookmarkDesc = request.desc || "",
+                bookmarkTags = request.tags.split(',').map(function (element) {
+                        return element.trim();
+                    }) || [];
+            app.dataAccess.addBookmarkToCloud(bookmarkUrl, bookmarkTitle, bookmarkDesc, bookmarkTags)
+                .then(function () {
+                    alert("Added");
+                }, function (error) {
+                    console.log(error);
+                });
+        });
 });

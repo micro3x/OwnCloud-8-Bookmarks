@@ -1,0 +1,75 @@
+#oc-modal-box {
+  width: 600px;
+  margin: 20% auto;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 15px;
+}
+#oc-modal-box #oc-addBookmark-form .oc-stretch {
+  margin: 15px 10px;
+}
+#oc-modal-box #oc-addBookmark-form .oc-stretch input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#oc-modal-box #oc-addBookmark-form .oc-col {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  width: 45%;
+}
+#oc-modal-box #oc-addBookmark-form .oc-col input,
+#oc-modal-box #oc-addBookmark-form .oc-col textarea {
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#oc-modal-box #oc-addBookmark-form label {
+  display: block;
+  vertical-align: top;
+}
+.oc-button {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  color: black !important !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  background-color: transparent !important;
+  border: 1px solid gray !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+#oc-save {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  color: black !important !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  background-color: transparent !important;
+  border: 1px solid gray !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  border: 1px solid green !important;
+}
+#oc-save:hover {
+  background-color: rgba(0, 255, 0, 0.1) !important;
+}
+#oc-reset {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  color: black !important !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  background-color: transparent !important;
+  border: 1px solid gray !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  border: 1px solid red !important;
+}
+#oc-reset:hover {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
