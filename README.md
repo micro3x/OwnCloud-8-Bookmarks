@@ -5,6 +5,11 @@ With this extension you can access and use your OwnCloud bookmarks in just a cli
 
 On first connect all bookmarks are downloaded locally and you can access them even if you do not have connection to your cloud. And are automatically updated every time you access the extension if you have connection.
 
+version 1.5
+
+New Features:
+ - Context Menu for adding bookmarks
+
 version 1.4
 
 New Features:
