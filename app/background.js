@@ -36,23 +36,14 @@ app.constants = app.constants || {};
 })(app);
 
 
-function addFromBackground(){
-    var app = app || {};
-    alert('test');
-}
-
-
 chrome.contextMenus.create({
     id: 'oc-top',
     type: "normal",
-    title: "bookmark to cloud",
+    title: "Bookmark to OwnCloud",
     onclick: function (info, tab) {
-
         chrome.tabs.executeScript(tab.id, {file: "lib/jquery-2.1.4.min.js"});
         chrome.tabs.executeScript(tab.id, {file: "app/context.js"});
         chrome.tabs.insertCSS(tab.id, {file: "oc-modal.css"});
-
-
     }
 }, function () {
     chrome.runtime.onMessage.addListener(
