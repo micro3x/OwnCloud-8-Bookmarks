@@ -32,6 +32,7 @@
     saveButton.on('click', function () {
         fader.toggle();
         chrome.runtime.sendMessage({
+			"titl": $('#oc-addBookmark-title').val(),
             "desc": $('#oc-addBookmark-description').val(),
             "tags": $('#oc-addBookmarkTags').val()
         });

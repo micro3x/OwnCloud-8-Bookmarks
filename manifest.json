@@ -20,7 +20,6 @@
   "options_ui": {
     "page": "settings_main.html",
     "chrome_style": true
-    //"open_in_tab": true
   },
   "permissions": [
     "contextMenus",

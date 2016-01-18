@@ -48,12 +48,8 @@ chrome.contextMenus.create({
 }, function () {
     chrome.runtime.onMessage.addListener(
         function (request, sender, sendResponse) {
-            console.log(request);
-            console.log(sender);
-            console.log(sendResponse);
-
             var bookmarkUrl = sender.tab.url,
-                bookmarkTitle = sender.tab.title,
+                bookmarkTitle = request.titl || sender.tab.title,
                 bookmarkDesc = request.desc || "",
                 bookmarkTags = request.tags.split(',').map(function (element) {
                         return element.trim();
