@@ -145,7 +145,7 @@ app.data.localData = app.data.localData || [];
     }
 
     function filterLocalData(searchString) {
-        var regex = new RegExp('.*' + searchString.toLowerCase() + '.*', 'g');
+        var regex = new RegExp('.*' + escapeRegExp(searchString.toLowerCase()) + '.*', 'g');
         var outputData = {};
 
         for (var tag in scope.data.localData) {
@@ -188,6 +188,10 @@ app.data.localData = app.data.localData || [];
                 deffered.reject(error);
             });
         return deffered.promise;
+    }
+
+    function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
     }
 
     scope.dataAccess.getDataFromServer = getDataFromServer;
