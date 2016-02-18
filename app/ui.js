@@ -6,11 +6,13 @@ app.ui = app.ui || {};
     function displayError(message) {
         var infoBox = $('#infoBox');
         infoBox.text(message);
+        infoBox.css({color:'#F00'})
     }
 
     function displayInfo(message) {
         var infoBox = $('#infoBox');
         infoBox.text(message);
+        infoBox.css({color:'#000'})
     }
 
     function displayBookmarks(data) {

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "OwnCloud 8 Bookmarks",
   "description": "Provides access to Owncloud 8 Bookmarks.",
-  "version": "1.5.0",
+  "version": "1.5.2",
   "icons": {
     "19": "small_icon.png",
     "38": "medium_icon.png",

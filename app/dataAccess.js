@@ -35,7 +35,8 @@ app.data.localData = app.data.localData || [];
                 }
             },
             function (error) {
-
+                app.ui.error(error.statusText);
+                console.log(error.statusText);
             })
     }
 

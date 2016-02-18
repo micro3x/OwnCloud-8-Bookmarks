@@ -6,6 +6,7 @@ $('document').ready(function () {
     app.constants.path = '/index.php/apps/bookmarks/';
     app.constants.user = '';
     app.constants.pass = '';
+    app.constants.accessToken = '';
     
     app.dataAccess.getDataFromStorage();
     app.ui.displayBookmarks(app.data.localData);
@@ -108,6 +109,7 @@ $('document').ready(function () {
             function () {
                 if (!app.security.isLogged()) {
                     app.ui.error('not logged in')
+                    return;
                 }
                 app.dataAccess.getDataFromServer();
             })
