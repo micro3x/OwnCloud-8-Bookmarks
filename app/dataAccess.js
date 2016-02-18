@@ -150,6 +150,10 @@ app.data.localData = app.data.localData || [];
 
         for (var tag in scope.data.localData) {
             var bookmarks = scope.data.localData[tag];
+            if(tag.toLowerCase().match(regex)){
+                outputData[tag] = bookmarks;
+                continue;
+            }
 
             var matchingValues = [];
 
